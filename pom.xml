@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.github.pixvs.pixvs-core-repo</groupId>
+    <artifactId>pixvs-core-repo-parent</artifactId>
+    <version>0.0.1</version>
+    <packaging>pom</packaging>
+    <name>pixvs-core-repo-parent</name>
+    <description>Librerias Externas Pixvs</description>
+    <url>http://pixvs.github.io/pixvs-core-repo/</url>
+
+    <licenses>
+        <license>
+            <name>Apache License v2</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>scm:git:git@github.com:pixvs/pixvs-core-repo.git</connection>
+        <developerConnection>scm:git:git@github.com:pixvs/pixvs-core-repo.git</developerConnection>
+        <url>git@github.com:pixvs/pixvs-core-repo.git</url>
+    </scm>
+
+    <developers>
+        <developer>
+            <name>David Arroyo</name>
+            <email>david.arroyo@pixvs.com</email>
+        </developer>
+    </developers>
+    <modules>
+        <module>core</module>
+        <module>javase</module>
+        <module>android</module>
+    </modules>
+
+    <properties>
+        <zxing.version>3.3.0</zxing.version>
+        <batik.version>1.10</batik.version>
+        <junit.version>4.8.2</junit.version>
+        <robolectric.version>3.0</robolectric.version>
+        <fest-android.version>1.0.7</fest-android.version>
+        <android.platform.version>4.1.1.4</android.platform.version>
+        <maven-compiler-plugin.source>1.7</maven-compiler-plugin.source>
+        <maven-compiler-plugin.target>1.7</maven-compiler-plugin.target>
+        <maven-compiler-plugin.version>2.3.2</maven-compiler-plugin.version>
+        <maven-checkstyle-plugin.version>2.12.1</maven-checkstyle-plugin.version>
+        <maven-javadoc-plugin.version>3.0.1</maven-javadoc-plugin.version>
+        <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
+        <nexus-staging-maven-plugin.version>1.6.4</nexus-staging-maven-plugin.version>
+        <maven-gpg-plugin.version>1.5</maven-gpg-plugin.version>
+    </properties>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>${maven-checkstyle-plugin.version}</version>
+                <configuration>
+                    <configLocation>checkstyle.xml</configLocation>
+                </configuration>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>checkstyle</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+        </plugins>
+    </reporting>
+
+    <profiles>
+    </profiles>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>${maven-compiler-plugin.source}</source>
+                    <target>${maven-compiler-plugin.target}</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>${maven-source-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
