@@ -1,0 +1,1 @@
+mvn deploy:deploy-file -Dfile=D:/api_cfdi_forsedi-1.2.jar -DgroupId=com.forsedi.cfdi -DartifactId=api-cfdi-forsedi -Dversion=1.2 -Dpackaging=jar -Durl=file:./
